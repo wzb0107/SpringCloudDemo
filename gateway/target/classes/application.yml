@@ -1,0 +1,18 @@
+server:
+  port: 9999
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10011/eureka
+
+spring:
+  application:
+    name: gateway-service
+
+zuul:
+  routes:
+    consumer-service: /**
+  ignored-services:
+    - user-service
+

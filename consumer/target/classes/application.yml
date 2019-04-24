@@ -1,0 +1,20 @@
+server:
+  port: 7758
+
+spring:
+  application:
+    name: consumer-service
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10011/eureka,http://127.0.0.1:10012/eureka
+    registry-fetch-interval-seconds: 3
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
